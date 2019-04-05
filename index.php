@@ -107,10 +107,37 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Modal Header</h4>
+                            <h4 class="modal-title">Check-out de Pagamento</h4>
                         </div>
                         <div class="modal-body">
-                            <p>Some text in the modal.</p>
+                            <h4>Curso de <?php echo $nomeCurso ?></h4>
+                            <h4>Investimento: R$ <?php echo $infoCursos[1]?></h4>
+                            <form action="validarCompra.php" method="post">
+                                <input type="hidden" value="<?php echo$nomeCurso; ?>" name="nomeCurso">
+                                <input type="hidden" value="<?php echo$infoCursos[1]; ?>" name="precoCurso">
+                                <div class="input-group col-md-5">
+                                    <label for="nomeCompleto">Nome Completo</label>
+                                    <input id="nomeCompleto" name="nomeCompleto" type="text" class="form-control">
+                                </div>
+                                <div class="input-group col-md-5">
+                                    <label for="cpf">CPF</label>
+                                    <input id="cpf" name="CPF" type="number" class="form-control">
+                                </div>
+                                <div class="input-group col-md-5">
+                                    <label for="nroCartao">Número do Cartão</label>
+                                    <input id="nroCartao" name="numeroCartao" type="number" class="form-control">
+                                </div>
+                                <div class="input-group col-md-5">
+                                    <label for="validade">Validade</label>
+                                    <input id="validade" name="validade" type="month" class="form-control">
+                                </div>
+                                <div class="input-group col-md-5">
+                                    <label for="cvv">CVV</label>
+                                    <input id="cvv" name="CVV" type="number" class="form-control">
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary">Comprar</button>
+                            </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
